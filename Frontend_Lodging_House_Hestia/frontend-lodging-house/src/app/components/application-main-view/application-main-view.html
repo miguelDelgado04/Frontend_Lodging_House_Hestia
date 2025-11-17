@@ -1,0 +1,135 @@
+<!-- ===== TOPBAR ===== -->
+<nav class="topbar" aria-label="Main">
+  <div class="container topbar__row">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M4 12l8-9 8 9-8 9-8-9z" fill="#2d73ff" />
+      </svg>
+      <span class="brand__name">Hestia</span>
+    </a>
+
+    <label class="search">
+      <svg viewBox="0 0 24 24" class="search__ic" aria-hidden="true">
+        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5Z"/>
+      </svg>
+      <input type="search" placeholder="San Francisco, CA"
+             [ngModel]="query()" (ngModelChange)="query.set($event)" />
+    </label>
+
+    <ul class="top-actions" role="list">
+      <li><a href="#">Explore</a></li>
+      <li><a href="#">Wishlists</a></li>
+      <li><a href="#">Trips</a></li>
+      <li><a href="#">Messages</a></li>
+      <li><button class="avatar" aria-label="Profile">A</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== CONTENT ===== -->
+<main class="page">
+  <div class="container layout">
+    <!-- Filters -->
+    <aside class="filters" aria-label="Filters">
+      <h3 class="filters__title">Filters</h3>
+
+      <label class="field">
+        <span class="label">City</span>
+        <div class="select">
+          <select [ngModel]="selectedCity()"
+                  (ngModelChange)="selectedCity.set($event)">
+            <option value="">All</option>
+            <option *ngFor="let c of cities()" [value]="c">{{ c }}</option>
+          </select>
+          <svg viewBox="0 0 24 24" class="chev" aria-hidden="true">
+            <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+          </svg>
+        </div>
+      </label>
+
+      <div class="dates">
+        <label class="field">
+          <span class="label">Check-in</span>
+          <input type="date" [ngModel]="checkIn()" (ngModelChange)="checkIn.set($event)">
+        </label>
+        <label class="field">
+          <span class="label">Check-out</span>
+          <input type="date" [ngModel]="checkOut()" (ngModelChange)="checkOut.set($event)">
+        </label>
+      </div>
+
+      <div class="field">
+        <div class="label between">
+          <span>Price range</span>
+          <span class="muted">${{ priceMin() }} – ${{ priceMax() }}</span>
+        </div>
+        <input
+          type="range"
+          [min]="globalMin"
+          [max]="globalMax"
+          [ngModel]="priceMax()"
+          (ngModelChange)="priceMax.set(+$any($event))"
+        >
+        <div class="range-scale">
+          <span>${{ globalMin }}</span>
+          <span>${{ globalMax }}</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="label">Amenities</span>
+        <label class="amenity" *ngFor="let a of amenities">
+          <input type="checkbox"
+                 [checked]="amenityOn()[a]"
+                 (change)="toggleAmenity(a)">
+          <span>{{ a }}</span>
+        </label>
+      </div>
+
+      <button class="btn btn--primary btn--block">
+        Show {{ countLabel() }} places
+      </button>
+      <button class="btn btn--soft btn--block" (click)="resetFilters()">Reset</button>
+    </aside>
+
+    <!-- Results -->
+    <section class="results">
+      <header class="results__head">
+        <h2 class="h2">
+          {{ countLabel() }} places to stay
+        </h2>
+        <div class="sort">
+          <label>Sort by:</label>
+          <div class="select select--sm">
+            <select [ngModel]="sortKey()" (ngModelChange)="sortKey.set($event)">
+              <option value="relevance">Relevance</option>
+              <option value="priceAsc">Price: Low to High</option>
+              <option value="priceDesc">Price: High to Low</option>
+            </select>
+            <svg viewBox="0 0 24 24" class="chev" aria-hidden="true">
+              <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <article class="card" *ngFor="let l of filtered()">
+          <div class="card__media">
+            <img [src]="l.image" [alt]="l.title">
+            <button class="fav" [class.is-on]="l.favorite" (click)="toggleFavorite(l, $event)" aria-label="Toggle favorite">
+              <svg viewBox="0 0 24 24" class="heart">
+                <path d="M12.1 21.35l-1.1-1C5.14 15.24 2 12.36 2 8.99 2 6.42 4.42 4 7 4c1.73 0 3.41.81 4.5 2.09C12.59 4.81 14.27 4 16 4c2.58 0 5 2.42 5 4.99 0 3.37-3.14 6.25-8.9 11.36l-1.1 1z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">{{ l.title }}</h3>
+            <p class="card__meta">{{ l.city }}, {{ l.state }}</p>
+            <p class="card__price">${{ l.price }}/night</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>

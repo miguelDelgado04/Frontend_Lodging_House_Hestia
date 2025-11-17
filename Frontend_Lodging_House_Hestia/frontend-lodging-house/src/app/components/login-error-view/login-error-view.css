@@ -1,0 +1,80 @@
+/* Fondo gris muy suave y centrado */
+.error-page{
+  min-height: 100vh;
+  display: flex;                 /* robusto y simple */
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: #f3f5f7;
+}
+
+/* Tarjeta */
+.error-card{
+  width: 100%;
+  max-width: 420px;              /* tamaño compacto del mockup */
+  text-align: center;
+  padding: 22px 24px 26px;       /* top / sides / bottom */
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+/* Icono de error */
+.icon-wrap{
+  width: 70px; height: 70px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-error, #DC3545) 14%, white);
+  display: grid; place-items: center;
+}
+.error-icon{ width: 40px; height: 40px; }
+.error-icon .ring{ fill: none; stroke: var(--color-error, #DC3545); opacity: .35; stroke-width: 2; }
+.error-icon .cross{ stroke: var(--color-error, #DC3545); }
+
+/* Tipografía */
+.title{
+  margin: 0 0 6px;
+  font-weight: var(--font-weight-bold);
+  color: #000;
+  font-size: 1.125rem;
+}
+.subtitle{
+  margin: 0 0 14px;
+  color: var(--color-secondary-600, #666);
+  font-size: 0.9rem;
+}
+
+/* Botón rojo centrado y sin desbordes */
+.btn-row{
+  display: grid;
+  place-items: center;
+  margin-top: 6px;
+}
+.btn-row .btn{
+  width: 100%;
+  max-width: 320px;             /* ancho visual del mockup */
+  height: 44px;
+  border-radius: 12px;
+  font-weight: var(--font-weight-semibold);
+  box-sizing: border-box;       /* evita que el padding aumente el ancho */
+  box-shadow: 0 8px 16px rgba(220,53,69,.25);
+}
+/* si por algún motivo no toma el token, forzamos el fondo */
+.btn-row .btn.btn--error{
+  background: var(--color-error, #DC3545);
+  color: #fff;
+}
+
+.btn-row .btn:hover{ filter: brightness(.95); }
+.btn-row .btn:focus-visible{
+  outline: 2px solid color-mix(in srgb, var(--color-error, #DC3545) 40%, transparent);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 420px){
+  .error-card{ max-width: 92vw; padding: 20px; border-radius: 12px; }
+  .icon-wrap{ width: 66px; height: 66px; }
+  .error-icon{ width: 36px; height: 36px; }
+}

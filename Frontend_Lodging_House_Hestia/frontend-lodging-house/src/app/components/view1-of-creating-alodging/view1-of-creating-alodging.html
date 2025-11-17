@@ -1,0 +1,124 @@
+<nav class="topbar" role="navigation" aria-label="Barra principal">
+  <div class="container topbar__row">
+    <!-- IZQUIERDA: Marca -->
+    <a class="brand" routerLink="/home">
+      <span class="brand__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 2l8 10-8 10L4 12 12 2z" fill="#2d73ff"/>
+        </svg>
+      </span>
+      <span class="brand__name">Hestia</span>
+    </a>
+
+    <!-- CENTRO: navegación -->
+    <ul class="nav-center" role="list">
+      <li><a routerLink="/home" routerLinkActive="is-active">Inicio</a></li>
+      <li><a routerLink="/explore" routerLinkActive="is-active">Explorar</a></li>
+      <li><a routerLink="/host-accommodation-list-view" routerLinkActive="is-active">Mis alojamientos</a></li>
+    </ul>
+
+    <!-- DERECHA: acciones -->
+    <div class="topbar__right">
+      <button class="icon-btn" aria-label="Idioma">
+        <svg viewBox="0 0 24 24" class="icon">
+          <path fill="currentColor"
+            d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.18a15.3 15.3 0 0 0-1.06-5.12A8.013 8.013 0 0 1 19.93 11ZM12 4a13.31 13.31 0 0 1 1.87 6H10.13A13.31 13.31 0 0 1 12 4ZM4.07 13h3.18a15.3 15.3 0 0 0 1.06 5.12A8.013 8.013 0 0 1 4.07 13Zm3.18-2H4.07A8.013 8.013 0 0 1 8.31 5.88 15.3 15.3 0 0 0 7.25 11Zm2.82 2h2.86a13.31 13.31 0 0 1-1.87 6 13.31 13.31 0 0 1-1.87-6Zm4.62 0h3.18A8.013 8.013 0 0 1 15.69 18.12 15.3 15.3 0 0 0 14.69 13Z"/>
+        </svg>
+      </button>
+
+      <!-- Usa <img> si tienes foto real -->
+      <button class="avatar-btn" aria-label="Abrir perfil">
+        <span class="avatar-fallback">L</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ======= CONTENIDO PRINCIPAL ======= -->
+<section class="wizard-page">
+  <div class="container">
+    <div class="card wizard-card" role="form" aria-labelledby="step-title">
+      <!-- Progreso -->
+      <header class="step-header">
+        <div class="step-meta">
+          <span class="step-label">Paso 1 de 3</span>
+          <div class="progress">
+            <div class="progress__bar" style="width:25%" aria-hidden="true"></div>
+          </div>
+        </div>
+        <h1 id="step-title" class="title">Crea tu anuncio</h1>
+        <p class="subtitle">
+          Comienza por proporcionarnos los detalles básicos de tu alojamiento.
+        </p>
+      </header>
+
+      <form (ngSubmit)="next()" #f="ngForm" novalidate>
+        <div class="field">
+          <label for="title">Título</label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            [(ngModel)]="model.title"
+            required
+            minlength="6"
+            placeholder="Ej: Cabaña acogedora con vistas al lago"
+            #title="ngModel"
+          />
+        </div>
+
+        <div class="field">
+          <label for="description">Descripción</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            [(ngModel)]="model.description"
+            required
+            minlength="20"
+            placeholder="Describe tu alojamiento con más detalle"
+            #description="ngModel"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="address">Dirección</label>
+          <input
+            id="address"
+            name="address"
+            type="text"
+            [(ngModel)]="model.address"
+            required
+            placeholder="Ej: Calle Principal 123, Ciudad, País"
+            #address="ngModel"
+          />
+        </div>
+
+        <div class="field">
+          <label for="price">Precio por noche</label>
+          <div class="input-group">
+            <span class="prefix">$</span>
+            <input
+              id="price"
+              name="price"
+              type="number"
+              step="0.01"
+              min="0"
+              [(ngModel)]="model.price"
+              required
+              placeholder="150"
+              #price="ngModel"
+            />
+            <span class="suffix">USD</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn--soft" (click)="cancel()">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Siguiente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

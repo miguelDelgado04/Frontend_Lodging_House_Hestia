@@ -1,0 +1,93 @@
+<header class="header">
+  <div class="brand">
+    <div class="logo-dot" aria-hidden="true"></div>
+    <span class="brand-name">Hestia</span>
+  </div>
+
+  <nav class="nav" aria-label="Principal">
+    <a class="nav-link" href="#">Inicio</a>
+    <a class="nav-link" href="#">Explorar</a>
+    <a class="nav-link" href="#">Crear</a>
+    <a class="btn btn--secondary nav-cta" href="#">Iniciar sesión</a>
+  </nav>
+</header>
+
+<main class="page container">
+  <section class="create-grid" aria-labelledby="create-title">
+    <!-- Lado izquierdo (imagen / banner) -->
+    <figure class="art-card card" role="img" aria-label="Ilustración de bienvenida">
+      <!-- Sustituye por tu imagen -->
+      <img
+        class="art-img"
+        src="https://picsum.photos/1000/800?random=42"
+        alt=""
+        loading="lazy"
+      />
+    </figure>
+
+    <!-- Lado derecho (formulario) -->
+    <div class="form-card card">
+      <h2 id="create-title" class="mb-s">Crea tu cuenta</h2>
+      <p class="subtitle mb-l">Únete a nuestra comunidad de anfitriones y usuarios.</p>
+
+      <form novalidate autocomplete="on">
+        <div class="field">
+          <label class="label" for="name">Nombre</label>
+          <input id="name" class="input" type="text" name="name" placeholder="Tu nombre completo" />
+          <small class="help" id="name-help" hidden>Introduce tu nombre completo.</small>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Correo electrónico</label>
+          <input id="email" class="input" type="email" name="email" placeholder="tu@email.com"
+                 inputmode="email" autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Contraseña</label>
+          <input id="password" class="input" type="password" name="password" placeholder="Mínimo 8 caracteres"
+                 minlength="8" autocomplete="new-password" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label class="label" for="phone">Teléfono</label>
+            <input id="phone" class="input" type="tel" name="phone" placeholder="+1 234 567 890"
+                   inputmode="tel" autocomplete="tel" />
+          </div>
+
+          <div class="field">
+            <label class="label" for="birth">Fecha de nacimiento</label>
+            <input id="birth" class="input" type="date" name="birth" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="role">Rol</label>
+          <div class="select-wrap">
+            <select id="role" name="role" class="select" aria-describedby="role-help">
+              <option value="" selected disabled>Selecciona tu rol</option>
+              <option>Usuario</option>
+              <option>Anfitrión</option>
+              <option>Administrador</option>
+            </select>
+            <!-- flecha decorativa -->
+            <span class="chevron" aria-hidden="true">▾</span>
+          </div>
+          <small id="role-help" class="help" hidden>Elige cómo usarás la plataforma.</small>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block mt-m">
+          Registrarse
+        </button>
+
+        <p class="legal muted mt-s">
+          Al registrarte, aceptas nuestros
+          <a href="#" class="link">Términos de servicio</a> y
+          <a href="#" class="link">Política de privacidad</a>.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+

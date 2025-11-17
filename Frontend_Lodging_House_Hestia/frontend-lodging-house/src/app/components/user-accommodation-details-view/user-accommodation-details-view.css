@@ -1,0 +1,97 @@
+:root{
+  --brand:#2d73ff;
+  --ink:#0f1a2b;
+  --muted:#667089;
+  --line:#e9edf3;
+  --bg:#f6f8fb;
+}
+
+/* ===== Topbar ===== */
+.topbar{position:sticky;top:0;z-index:50;background:#fbfcff;border-bottom:1px solid var(--line);backdrop-filter:saturate(180%) blur(6px)}
+.topbar__row{height:62px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none}
+.brand__name{color:var(--ink);font-weight:800}
+.nav-mid{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.nav-links a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:8px}
+.nav-links a.is-active,.nav-links a:hover{color:#111827;background:rgba(17,24,39,.05);font-weight:600}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff;min-width:280px}
+.search .icon{width:16px;height:16px;color:#667089}
+.search input{border:0;outline:0;background:transparent;width:100%}
+.icon-btn,.avatar-btn{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);cursor:pointer}
+.avatar-fallback{font-weight:700;color:#334155}
+
+/* ===== Page ===== */
+.detail-page{background:var(--bg);padding:18px 0 48px}
+.crumbs{display:flex;align-items:center;gap:8px;color:#7a8598;margin:6px 0 2px}
+.crumbs a{color:#7a8598;text-decoration:none}
+.head .title{margin:10px 0 4px;color:#0b1426;font-weight:900;letter-spacing:-.2px}
+.head .subtitle{margin:0;color:#6b778c}
+
+.media-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:26px;margin:20px 0 24px}
+@media (max-width:990px){.media-grid{grid-template-columns:1fr}}
+
+.gallery .hero{width:100%;height:360px;border-radius:16px;object-fit:cover}
+.gallery .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.gallery .thumbs img{width:100%;height:110px;border-radius:12px;object-fit:cover}
+
+/* ===== Booking Card ===== */
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 24px rgba(0,0,0,.06)}
+.book-card{padding:18px}
+.price-line{display:flex;justify-content:space-between;align-items:flex-end}
+.price{font-size:26px;font-weight:900;color:#0b1426}
+.per{color:#7a8598;margin-left:6px}
+.hint{color:#7a8598}
+.book-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field input,.field select{height:40px;border:1px solid #e1e6ef;border-radius:10px;padding:0 10px;background:#fff}
+.field:nth-child(3){grid-column:1/-1}
+.btn{height:42px;padding:0 18px;border-radius:10px;border:1px solid transparent;font-weight:700;cursor:pointer}
+.btn--primary{background:var(--brand);color:#fff}
+.btn--soft{background:#eef2f7;color:#243144;border-color:#e1e6ef}
+.breakdown{border-top:1px solid var(--line);margin-top:14px;padding-top:12px;display:grid;gap:8px}
+.breakdown .row{display:flex;justify-content:space-between;color:#4b5565}
+.total{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:1.05rem}
+
+/* ===== About / Map ===== */
+.about{padding:18px;margin:12px 0}
+.about h2{margin:0 0 6px}
+.map-section{margin:16px 0}
+.map-section h2{margin:0 0 8px}
+.map{width:100%;height:340px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#e6edf7}
+.address{color:#6b778c;margin-top:6px}
+
+/* ===== Availability ===== */
+.availability{padding:18px;margin:18px 0}
+.months{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media (max-width:900px){.months{grid-template-columns:1fr}}
+.month-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;margin-bottom:8px}
+.month-head h3{margin:0;text-align:center}
+.nav{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{text-align:center;color:#7a8598;font-size:.85rem}
+.day{height:36px;border-radius:8px;border:1px solid #e1e6ef;background:#fff;cursor:pointer}
+.day.is-pad{visibility:hidden}
+.day.is-blocked{background:#f3f5f7;color:#9aa3af;border-style:dashed;cursor:not-allowed}
+.day.is-selected{background:#e8f0ff;border-color:#b9cdfd}
+
+/* ===== Reviews ===== */
+.reviews{padding:18px;margin:18px 0}
+.reviews h2{margin-top:0}
+.score{display:flex;align-items:center;gap:12px}
+.score .big{font-size:32px;font-weight:900}
+.mini-stars{display:flex;gap:3px}
+.star{width:12px;height:12px;display:inline-block;background:#e5e7eb;mask: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path d=%22M12 17.3 18.2 21l-1.6-7 5.4-4.7-7.1-.6L12 2 9.1 8.7 2 9.3l5.4 4.7L5.8 21 12 17.3z%22/></svg>') center/contain no-repeat}
+.star.on{background:#f59e0b}
+.bars{margin:10px 0 14px;display:grid;gap:6px}
+.bar{display:grid;grid-template-columns:20px 1fr 36px;gap:8px;align-items:center}
+.track{height:6px;border-radius:999px;background:#edf0f5;overflow:hidden}
+.fill{height:100%;background:#91a7ff}
+.review-list{display:grid;gap:16px}
+.review{border-top:1px solid var(--line);padding-top:12px}
+.rev-head{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}
+.avatar{width:40px;height:40px;border-radius:999px;object-fit:cover}
+
+/* Misc */
+h1,h2,h3{color:#0b1426}

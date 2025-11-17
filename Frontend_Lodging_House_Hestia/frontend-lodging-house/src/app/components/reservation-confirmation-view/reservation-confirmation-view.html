@@ -1,0 +1,36 @@
+<!-- ===== ReservationConfirmationView ===== -->
+<section class="confirm-overlay" aria-hidden="false">
+  <div
+    class="confirm-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="confirm-title"
+    aria-describedby="confirm-desc"
+  >
+    <!-- Icono del candado o confirmación -->
+    <div class="icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="icon">
+        <path
+          fill="none"
+          stroke="#22c55e"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5Zm0 0v8"
+        />
+      </svg>
+    </div>
+
+    <!-- Texto -->
+    <h3 id="confirm-title" class="title">¿Deseas confirmar esta reserva?</h3>
+    <p id="confirm-desc" class="subtitle muted">
+      Revisa los detalles antes de confirmar.
+    </p>
+
+    <!-- Acciones -->
+    <div class="actions">
+      <a class="btn btn--soft" routerLink="/reservationCreationViewComponent" tabindex="0">Cancelar</a>
+      <a class="btn btn--success" routerLink="/bookingSuccessViewComponent" tabindex="0" autofocus>Confirmar</a>
+    </div>
+  </div>
+</section>

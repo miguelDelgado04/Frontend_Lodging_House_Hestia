@@ -1,0 +1,124 @@
+<!-- ===== TOPBAR ===== -->
+<nav class="topbar" role="navigation" aria-label="Barra principal">
+  <div class="container topbar__row">
+    <!-- Logo a la izquierda -->
+    <a class="brand" href="#">
+      <span class="brand__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 3c3 5-3 7-6 7 2 4 6 7 6 7s4-3 6-7c-3 0-9-2-6-7z" fill="#0f1a2b"/>
+        </svg>
+      </span>
+      <span class="brand__name">Hestia</span>
+    </a>
+
+    <!-- Navegación + iconos a la derecha -->
+    <div class="topbar__right">
+      <ul class="nav-links" role="list">
+        <li><a href="#" class="is-active">Inicio</a></li>
+        <li><a href="#">Explorar</a></li>
+        <li><a href="#">Reservas</a></li>
+      </ul>
+
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg viewBox="0 0 24 24" class="icon">
+          <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="avatar-btn" aria-label="Abrir perfil">
+        <span class="avatar-fallback">UA</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== CONTENIDO ===== -->
+<main class="settings-page">
+  <div class="container">
+
+    <header class="page-header">
+      <h1 class="title">Configuración del Perfil</h1>
+      <p class="subtitle">Administra tu información personal y de seguridad.</p>
+    </header>
+
+    <section class="settings-grid">
+      <!-- ===== Tarjeta de perfil (izquierda) ===== -->
+      <aside class="card profile-card">
+        <div class="avatar-wrap">
+          <div class="avatar-fallback">UA</div>
+          <input id="avatarUpload" class="visually-hidden" type="file" accept="image/*" (change)="onAvatarChange($event)">
+          <label for="avatarUpload" class="avatar-edit-btn" title="Cambiar foto" aria-label="Cambiar foto">
+            <svg viewBox="0 0 24 24" class="camera-ic">
+              <path d="M9 7h6l1 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2h3l1-2z" fill="currentColor"/>
+              <circle cx="12" cy="14" r="3" fill="#fff"/>
+            </svg>
+          </label>
+        </div>
+
+        <h4 class="name">Usuario Actual</h4>
+        <p class="muted">usuario@example.com</p>
+        <p class="status">Usuario verificado</p>
+
+        <div class="divider"></div>
+
+        <h5 class="section-title">Descripción</h5>
+        <p class="desc">
+          ¡Hola! Soy un apasionado de los viajes y me encanta recibir a gente de todo el mundo.
+          Mi objetivo es que te sientas como en casa.
+        </p>
+      </aside>
+
+      <!-- ===== Paneles (derecha) ===== -->
+      <div class="right-col">
+        <section class="card panel">
+          <h3 class="panel-title">Información Personal</h3>
+
+          <!-- Botón alineado en la misma fila que "Teléfono" -->
+          <form class="form-2col" novalidate>
+            <div class="field">
+              <label class="label" for="name">Nombre</label>
+              <input id="name" class="input" type="text" placeholder="Tu nombre completo">
+            </div>
+
+            <div class="field">
+              <label class="label" for="phone">Teléfono</label>
+              <input id="phone" class="input" type="tel" placeholder="Tu número de teléfono">
+            </div>
+
+            <div class="actions end">
+              <button type="button" class="btn btn--primary">Guardar Cambios</button>
+            </div>
+
+            <div class="field field-span">
+              <label class="label" for="email">Correo electrónico</label>
+              <input id="email" class="input" type="email" placeholder="usuario@example.com">
+            </div>
+          </form>
+        </section>
+
+        <section class="card panel">
+          <h3 class="panel-title">Cambiar Contraseña</h3>
+
+          <form class="form-vertical" novalidate>
+            <div class="field">
+              <label class="label" for="currentPass">Contraseña actual</label>
+              <input id="currentPass" class="input" type="password" placeholder="••••••••" autocomplete="current-password">
+            </div>
+            <div class="field">
+              <label class="label" for="newPass">Nueva contraseña</label>
+              <input id="newPass" class="input" type="password" placeholder="••••••••" autocomplete="new-password">
+            </div>
+            <div class="field">
+              <label class="label" for="confirmPass">Confirmar nueva contraseña</label>
+              <input id="confirmPass" class="input" type="password" placeholder="••••••••" autocomplete="new-password">
+            </div>
+
+            <div class="actions end">
+              <button type="submit" class="btn btn--primary">Cambiar Contraseña</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>

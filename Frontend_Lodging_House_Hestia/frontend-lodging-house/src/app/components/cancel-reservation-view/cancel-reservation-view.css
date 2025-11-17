@@ -1,0 +1,118 @@
+/* Fondo gris oscuro detrás del modal */
+.cancel-page{
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 23, 42, 0.75); /* overlay gris */
+  padding: 24px;
+}
+
+/* Tarjeta central */
+.cancel-card{
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px 30px 24px;
+  text-align: center;
+  box-shadow:
+    0 22px 45px rgba(15, 23, 42, 0.35);
+}
+
+/* Icono de alerta */
+.icon-wrap{
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #fee2e2; /* rojo muy suave */
+  display: grid;
+  place-items: center;
+}
+.alert-icon{
+  width: 44px;
+  height: 44px;
+}
+.alert-icon .ring{
+  fill: none;
+  stroke: transparent;
+}
+.alert-icon .triangle{
+  fill: #f97373;
+}
+.alert-icon .excl{
+  stroke: #ffffff;
+  stroke-width: 1.9;
+}
+.alert-icon .excl-dot{
+  fill: #ffffff;
+}
+
+/* Tipografía */
+.title{
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+}
+.subtitle{
+  margin: 0 0 18px;
+  font-size: 0.92rem;
+  color: #6b7280;
+}
+
+/* Botones */
+.btn-row{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.btn{
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+
+/* Botón rojo principal */
+.btn--danger{
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 10px 18px rgba(239, 68, 68, 0.35);
+}
+.btn--danger:hover{
+  background: #dc2626;
+}
+
+/* Botón gris secundario */
+.btn--secondary{
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #e5e7eb;
+}
+.btn--secondary:hover{
+  background: #e5e7eb;
+}
+
+/* Pequeño “press” al hacer clic */
+.btn:active{
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 480px){
+  .cancel-card{
+    padding: 22px 18px 20px;
+  }
+  .btn-row{
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,64 @@
+<main class="login-hero">
+  <div class="login-two-col container">
+    <!-- IZQUIERDA: panel limpio sobre fondo claro -->
+    <div class="login-left">
+      <header class="hero-brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-name">Hestia</span>
+      </header>
+
+      <h1 class="hero-title">Bienvenido de nuevo</h1>
+      <p class="subtitle mb-l">Inicia sesión para continuar</p>
+
+      <form class="login-form" novalidate autocomplete="on">
+        <div class="field">
+          <label class="label" for="email">Correo electrónico</label>
+          <input
+            id="email"
+            class="input"
+            type="email"
+            placeholder="tu@email.com"
+            inputmode="email"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Contraseña</label>
+          <input
+            id="password"
+            class="input"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+        </div>
+
+        <div class="row-forgot">
+          <a routerLink="/passwordRecoveryViewComponent" class="link link-muted">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <div class="cta-row">
+          <button type="submit" class="btn btn--primary btn--block">Iniciar Sesión</button>
+        </div>
+
+        <p class="muted center mt-m">
+          ¿No tienes una cuenta?
+          <a routerLink="/createAccountView" class="link">Regístrate</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- DERECHA: ilustración a toda altura (sin tarjeta) -->
+    <figure class="login-right">
+      <img
+        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop"
+        alt="Cabaña en el bosque"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+</main>
+

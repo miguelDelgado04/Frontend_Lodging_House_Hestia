@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('./styles/tokens.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 🔧 Evita cualquier borde o espacio adicional */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import "flatpickr/dist/flatpickr.css";
+@import "leaflet/dist/leaflet.css";
+
+
+

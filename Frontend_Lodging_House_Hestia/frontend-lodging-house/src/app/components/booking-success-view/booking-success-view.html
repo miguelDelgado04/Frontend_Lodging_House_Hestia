@@ -1,0 +1,42 @@
+<section class="success-overlay" aria-hidden="false">
+  <div
+    class="success-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="success-title"
+    aria-describedby="success-desc"
+  >
+    <!-- Icono de éxito -->
+    <div class="icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="icon">
+        <circle cx="12" cy="12" r="10" class="ring"></circle>
+        <path
+          d="M7 12.5l3 3 7-7"
+          class="tick"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+
+    <!-- Texto -->
+    <h2 id="success-title" class="title">
+      ¡Reserva confirmada! 🎉
+    </h2>
+    <p id="success-desc" class="subtitle muted">
+      Revisa tu correo para los detalles.
+    </p>
+
+    <!-- Botón principal -->
+    <div class="btn-row">
+      <a
+        class="btn btn--success btn--block"
+        routerLink="/reservationHistoryViewComponent"
+      >
+        Ver mis reservas
+      </a>
+    </div>
+  </div>
+</section>

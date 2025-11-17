@@ -1,0 +1,51 @@
+<section class="cancel-page">
+  <div
+    class="cancel-card"
+    role="dialog"
+    aria-labelledby="cancel-title"
+    aria-describedby="cancel-desc"
+  >
+    <!-- Icono de alerta -->
+    <div class="icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="alert-icon">
+        <circle cx="12" cy="12" r="11" class="ring" />
+        <path
+          class="triangle"
+          d="M12 5 5 18h14L12 5z"
+        />
+        <path
+          class="excl"
+          d="M12 10v4"
+          stroke-linecap="round"
+        />
+        <circle cx="12" cy="16.4" r="0.9" class="excl-dot" />
+      </svg>
+    </div>
+
+    <h2 id="cancel-title" class="title">
+      ¿Quieres cancelar esta reserva?
+    </h2>
+
+    <p id="cancel-desc" class="subtitle">
+      Podrás hacerlo solo hasta 48 horas antes del check-in.
+    </p>
+
+    <div class="btn-row">
+      <button
+        type="button"
+        class="btn btn--danger"
+        (click)="onConfirm()"
+      >
+        Sí, cancelar
+      </button>
+
+      <button
+        type="button"
+        class="btn btn--secondary"
+        (click)="onKeep()"
+      >
+        No, mantener
+      </button>
+    </div>
+  </div>
+</section>

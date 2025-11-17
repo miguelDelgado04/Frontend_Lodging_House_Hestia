@@ -1,0 +1,72 @@
+/* Fondo gris muy suave del mockup */
+.success-page{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-xl);
+  background: #f3f5f7;
+}
+
+/* Card más compacto y con sombra suave */
+.success-card{
+  width: 100%;
+  max-width: 520px;                 /* 520 aprox como el mock */
+  text-align: center;
+  padding: calc(var(--space-xl) - 4px) var(--space-xl);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Icono de éxito */
+.check-wrap{
+  width: 88px; height: 88px;
+  margin: 0 auto var(--space-m);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-success) 14%, white);
+  display: grid; place-items: center;
+}
+.check-icon{ width: 46px; height: 46px; }
+.check-icon .ring{ fill: none; stroke: var(--color-success); opacity: .35; stroke-width: 2; }
+.check-icon .tick{ stroke: var(--color-success); }
+
+/* Título y subtítulo más cercanos al mock */
+.title{
+  color: #000;
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(1.375rem, 1.2vw + 1rem, 1.75rem); /* 22–28px */
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+.subtitle{
+  max-width: 34ch;
+  margin: 0 auto;
+  color: var(--color-secondary-600);
+  font-size: 0.9375rem; /* ~15px para mejorar legibilidad */
+}
+
+/* Botón en fila centrada con ancho limitado */
+.btn-row{
+  margin-top: var(--space-m);
+  display: grid;
+  place-items: center;
+}
+.btn-row .btn{
+  min-width: 260px;
+  max-width: 360px;        /* evita que ocupe todo el card */
+  width: 100%;
+  justify-content: center;
+  border-radius: 999px;    /* píldora */
+  padding: 12px var(--space-xl);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: 0 6px 14px rgba(40,167,69,.25); /* sombra sutil verde */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 480px){
+  .success-card{ padding: var(--space-l); border-radius: 14px; }
+  .check-wrap{ width: 76px; height: 76px; }
+  .check-icon{ width: 40px; height: 40px; }
+  .btn-row .btn{ min-width: 0; }
+}
+

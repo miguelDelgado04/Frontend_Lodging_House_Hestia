@@ -1,0 +1,203 @@
+:root{
+  --blue:#2d73ff;
+  --blue-100:#eaf2ff;
+  --text:#0f172a;
+  --muted:#8a94a7;
+  --border:#e6ebf2;
+  --bg:#fbfcfe;
+}
+
+*{box-sizing:border-box}
+body{background:#fff;color:var(--text);font-family:Inter,system-ui,sans-serif}
+
+/* ===== FIXES: topbar + header alignment ===== */
+
+/* Quita subrayados y normaliza tipografía */
+.topbar a { text-decoration: none; color: #0f172a; }
+.topbar a:hover { text-decoration: underline; }
+
+/* Contenedor superior: todo en una sola línea, bien distribuido */
+.topbar__row{
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* brand a la izquierda, acciones a la derecha */
+  gap: 16px;
+}
+
+/* Marca: icono + nombre compactos */
+.brand{ display:flex; align-items:center; gap:8px; font-weight:800; }
+.brand svg{ display:block; }
+
+/* Acciones de la derecha en fila (link + hamburguesa) */
+.top-right{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Botón hamburguesa con mejor centrado */
+.icon-btn{
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border: 1px solid #e6ebf2;
+  border-radius: 999px; background: #fff;
+}
+
+/* Header: título y rating en una línea, menos aire */
+.page{ padding: 14px 0 28px; }                 /* reduce padding superior */
+.page-head{
+  margin: 8px 0 14px;
+  display: flex;
+  align-items: baseline;                      /* alinea la base del texto */
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Título compactado */
+.title{ margin:0; font-size: 26px; line-height: 1.1; font-weight: 800; }
+
+/* Rating más discreto y alineado */
+.rating{ display:flex; align-items:center; gap:6px; }
+.rating .star{ width:16px; height:16px; color:#f8b84a; }
+.rating .muted{ font-size: .92rem; }
+
+/* Línea inferior sutil de la barra superior */
+.topbar{ position: sticky; top: 0; z-index: 50; background:#fff; border-bottom:1px solid #eef2f6; }
+
+/* Asegura ancho y centrado del contenido */
+.container{ max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+
+/* Page header */
+.page{padding:18px 0 32px}
+.page .container{max-width:1120px}
+.page-head{display:flex;align-items:center;justify-content:space-between;margin:6px 0 16px}
+.title{margin:0;font-size:28px;font-weight:800;letter-spacing:-.2px}
+.rating{display:flex;align-items:center;gap:8px}
+.star{width:16px;height:16px;color:#f8b84a}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:420px 1fr;gap:20px}
+@media (max-width:980px){.layout{grid-template-columns:1fr}}
+
+/* Card */
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px 18px}
+.card__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.card__title{font-weight:700;color:#0f172a}
+.between{display:flex;justify-content:space-between}
+.v-center{align-items:center}
+
+/* Calendar */
+.calendar{padding-top:2px}
+.month-nav{display:flex;align-items:center;gap:10px}
+.month-nav strong{font-weight:700}
+.nav-btn{width:28px;height:28px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer}
+
+.cal-dow{margin-top:10px;color:var(--muted);font-size:.8rem}
+.cal-row{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:6px}
+
+.day{
+  height:34px;width:34px;margin:0 auto;
+  border-radius:999px;border:1px solid transparent;
+  background:#fff;color:#0f172a;font-size:.92rem;
+  display:grid;place-items:center;cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s
+}
+.day:hover{background:#f4f7fe}
+.day.blank{background:transparent;border-color:transparent;cursor:default}
+.day.today{border-color:#dbe7ff}
+.day.start,.day.end{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 2px 6px rgba(45,115,255,.25)}
+.day.in-range{background:var(--blue-100);color:#0f172a}
+
+/* Días deshabilitados (pasados o bloqueados) */
+.day.disabled{
+  color:#c0c7d1;
+  background:transparent;
+  border-color:transparent;
+  cursor:not-allowed;
+  position:relative;
+}
+.day.disabled:hover{background:transparent}
+
+.day.disabled::after{
+  content:"";
+  position:absolute;
+  width:18px;height:2px;background:#cfd6e0;border-radius:2px;transform:rotate(-12deg);
+}
+
+/* Footer del calendario */
+.sel-footer{margin-top:10px;padding-top:10px;border-top:1px solid #f1f3f7;font-size:.9rem;color:#475569}
+
+/* Right column */
+.right-col{display:flex;flex-direction:column;gap:14px}
+.row{padding:8px 0;border-bottom:1px solid #f3f5f8}
+.row:last-child{border-bottom:none}
+.label{font-weight:600}
+
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button{width:28px;height:28px;border-radius:999px;border:1px solid var(--border);background:#f7f9fc;cursor:pointer}
+.stepper span{min-width:18px;text-align:center;color:#0f172a}
+
+/* Price details */
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;color:#0f172a}
+.price-row.muted-row{color:#4a5568}
+.sep{border:none;border-top:1px solid #eef2f7;margin:2px 0 6px}
+.total{font-weight:800}
+
+/* Button */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:40px;border-radius:10px;border:1px solid transparent;font-weight:700;cursor:pointer}
+.btn--block{width:140px;align-self:flex-end}
+.btn--primary{background:var(--blue);color:#fff}
+.btn--primary:hover{filter:brightness(.96)}
+
+/* ===== CUSTOM: colores de check-in / check-out ===== */
+:root {
+  --blue: #2d73ff;         /* nuevo color principal */
+  --blue-100: #2d73ff;     /* tono más claro para el rango intermedio */
+}
+
+/* (Opcional) si prefieres no tocar variables globales */
+.day.start,
+.day.end {
+  background: #e8f0ff;     /* color principal */
+  border-color: #2d73ff;
+  color: #2d73ff;
+  box-shadow: 0 2px 6px rgba(255,123,0,.25);
+}
+
+.day.in-range {
+  background: #2d73ff;     /* tono más claro */
+}
+
+/* ===== BOTÓN RESERVAR ===== */
+.reserve-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn--primary {
+  background: #2d73ff;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(45,115,255,.25);
+}
+
+.btn--primary:hover {
+  background: #1a5ae0;
+  box-shadow: 0 6px 14px rgba(45,115,255,.35);
+}

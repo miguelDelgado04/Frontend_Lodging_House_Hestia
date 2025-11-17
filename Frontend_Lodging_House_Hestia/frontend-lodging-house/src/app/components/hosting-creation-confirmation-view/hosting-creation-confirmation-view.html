@@ -1,0 +1,41 @@
+<!-- hosting-creation-confirmation-view.component.html -->
+<section class="success-page">
+  <div
+    class="success-card card"
+    role="dialog"
+    aria-labelledby="success-title"
+    aria-describedby="success-desc"
+  >
+    <!-- Icono de confirmación -->
+    <div class="check-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="check-icon">
+        <circle cx="12" cy="12" r="10" class="ring"></circle>
+        <path
+          d="M7 12.5l3 3 7-7"
+          class="tick"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+
+    <!-- Título y subtítulo -->
+    <h2 id="success-title" class="title mb-s">
+      El alojamiento se ha guardado correctamente
+    </h2>
+
+    <p id="success-desc" class="subtitle muted mb-l">
+      Tu alojamiento ahora está disponible en la lista.
+    </p>
+
+    <!-- Botón -->
+    <div class="btn-row">
+      <a class="btn btn--success" routerLink="/host-accommodation-list-view">
+        Volver a la lista
+      </a>
+    </div>
+  </div>
+</section>
+

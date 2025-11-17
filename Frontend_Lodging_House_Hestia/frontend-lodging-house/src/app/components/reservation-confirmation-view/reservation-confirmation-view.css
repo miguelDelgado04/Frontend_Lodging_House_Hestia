@@ -1,0 +1,155 @@
+:root{
+  --green:#22c55e;
+  --green-100:#eafbf2;
+  --text:#0f172a;
+  --muted:#667085;
+  --border:#eef2f6;
+}
+
+/* Backdrop tipo modal */
+.confirm-overlay{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 23, 42, .06); /* gris verdoso muy suave como el mock */
+  padding: 32px;
+}
+
+/* Tarjeta */
+.confirm-card{
+  width: 100%;
+  max-width: 420px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding: 20px 22px 18px;
+  text-align:center;
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  animation: pop .14s ease-out;
+}
+
+@keyframes pop {
+  from { transform: translateY(4px) scale(.98); opacity:.6; }
+  to   { transform: none; opacity:1; }
+}
+
+/* Icono */
+.icon-wrap{
+  width:72px; height:72px; margin:0 auto 12px;
+  border-radius:50%;
+  background: var(--green-100);
+  display:grid; place-items:center;
+}
+.icon{ width:40px; height:40px; }
+.icon .ring{ fill:none; stroke: var(--green); opacity:.35; stroke-width:2; }
+.icon .symbol{ stroke: var(--green); }
+
+/* ===== ICONO DE CONFIRMACIÓN ===== */
+.icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #dcfce7; /* verde claro, más similar al mockup */
+  display: grid;
+  place-items: center;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  stroke: #22c55e;
+  fill: none;
+}
+
+/* Tipografía */
+.title{
+  margin: 2px 0 4px;
+  color:#0f172a;
+  font-weight:800;
+  font-size:1.1rem;
+  letter-spacing:-.2px;
+}
+.subtitle{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+/* Acciones */
+.actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:6px;
+}
+.btn{
+  min-width:120px;
+  height:40px;
+  padding:0 16px;
+  border-radius:10px;
+  font-weight:700;
+  border:1px solid transparent;
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer; text-decoration:none;
+}
+.btn--soft{
+  background:#f3f5f8; color:#27364b; border-color:#e6ebf2;
+}
+.btn--soft:hover{ background:#e9eef6; }
+.btn--success{
+  background:var(--green); color:#fff;
+  box-shadow: 0 8px 16px rgba(34,197,94,.25);
+}
+.btn--success:hover{ filter: brightness(.96); }
+
+/* Responsive */
+@media (max-width: 420px){
+  .confirm-card{ padding: 18px; border-radius:14px; }
+  .actions{ gap:8px; }
+  .btn{ min-width: 0; flex:1; }
+}
+
+/* ===== FIX: botón Confirmar que se ve vacío ===== */
+.confirm-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;         /* igualamos tamaños */
+  height: 40px;
+  padding: 0 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Cancelar (gris) – nos aseguramos que no herede estilos raros */
+.confirm-card .btn--soft {
+  background: #f3f5f8 !important;
+  color: #27364b !important;
+  border-color: #e6ebf2 !important;
+  background-image: none !important;
+}
+
+/* Confirmar (verde sólido) – FORZAMOS fondo y color */
+.confirm-card .btn--success {
+  background: #22c55e !important;
+  color: #fff !important;
+  border-color: #22c55e !important;
+  background-image: none !important;   /* evita gradientes de frameworks */
+  box-shadow: 0 8px 16px rgba(34,197,94,.25);
+}
+
+.confirm-card .btn--success:hover {
+  filter: brightness(.96);
+}
+
+.confirm-card .btn--success:focus-visible {
+  outline: 2px solid rgba(34,197,94,.35);
+  outline-offset: 2px;
+}
+
+/* Enlaces dentro del modal no deben cambiar de color ni subrayarse */
+.confirm-card a { color: inherit; text-decoration: none; }

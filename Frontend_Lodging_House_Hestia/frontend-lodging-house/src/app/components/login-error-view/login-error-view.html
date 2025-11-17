@@ -1,0 +1,25 @@
+<section class="error-page">
+  <div
+    class="error-card card"
+    role="dialog"
+    aria-labelledby="login-error-title"
+    aria-describedby="login-error-desc"
+  >
+    <!-- Icono de error -->
+    <div class="icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="error-icon">
+        <circle cx="12" cy="12" r="10" class="ring"></circle>
+        <path d="M8 8l8 8M16 8l-8 8"
+              class="cross" fill="none" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h3 id="login-error-title" class="title">Error de inicio de sesión</h3>
+    <p id="login-error-desc" class="subtitle muted">Correo o contraseña inválidos.</p>
+
+    <div class="btn-row">
+      <a class="btn btn--error btn--block" routerLink="/loginViewComponent">Reintentar</a>
+    </div>
+  </div>
+</section>
+

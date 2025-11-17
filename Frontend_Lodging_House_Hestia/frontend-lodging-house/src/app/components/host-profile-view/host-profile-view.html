@@ -1,0 +1,145 @@
+<!-- ===== TOPBAR ===== -->
+<nav class="topbar" role="navigation" aria-label="Barra principal">
+  <div class="container topbar__row">
+    <!-- Marca a la izquierda -->
+    <a class="brand" href="#">
+      <span class="brand__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#0f1a2b"/>
+        </svg>
+      </span>
+      <span class="brand__name">Hestia</span>
+    </a>
+
+    <!-- Navegación + iconos a la derecha -->
+    <div class="topbar__right">
+      <ul class="nav-links" role="list">
+        <li><a href="#" class="is-active">Inicio</a></li>
+        <li><a href="#">Explorar</a></li>
+        <li><a href="#">Reservas</a></li>
+      </ul>
+
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg viewBox="0 0 24 24" class="icon">
+          <path d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2Z" fill="currentColor"/>
+        </svg>
+      </button>
+
+      <button class="avatar-btn" aria-label="Abrir perfil">
+        <span class="avatar-fallback">CS</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ===== CONTENIDO ===== -->
+<main class="settings-page">
+  <div class="container">
+
+    <header class="page-header">
+      <h1 class="title">Perfil de Anfitrión</h1>
+    </header>
+
+    <section class="host-grid">
+      <!-- Columna izquierda: tarjeta de perfil/mini bio -->
+      <aside class="card host-profile-card">
+        <div class="avatar-wrap">
+          <img src="" alt="" hidden>
+          <div class="avatar-fallback">CS</div>
+
+          <input id="avatarUpload" class="visually-hidden" type="file" accept="image/*">
+          <label for="avatarUpload" class="avatar-edit-btn" title="Cambiar foto" aria-label="Cambiar foto">
+            <svg viewBox="0 0 24 24" class="camera-ic">
+              <path d="M9 7h6l1 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2h3l1-2z" fill="currentColor"/>
+              <circle cx="12" cy="14" r="3" fill="#fff"/>
+            </svg>
+          </label>
+        </div>
+
+        <div class="host-name">Carlos Sánchez</div>
+        <div class="host-badge muted">Anfitrión verificado</div>
+
+        <div class="host-box">
+          <div class="host-box__title">Descripción</div>
+          <p class="muted small">
+            ¡Hola! Soy un apasionado de los viajes y me encanta recibir a gente de todo el mundo.
+            Mi objetivo es que te sientas como en casa.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Columna derecha: formularios -->
+      <div class="right-col">
+        <!-- Información personal -->
+        <section class="card panel">
+          <h3 class="panel-title">Información personal</h3>
+
+          <form class="form-personal" novalidate>
+            <div class="field">
+              <label class="label" for="firstName">Nombre</label>
+              <input id="firstName" class="input" type="text" placeholder="Carlos">
+            </div>
+
+            <div class="field">
+              <label class="label" for="lastName">Apellido</label>
+              <input id="lastName" class="input" type="text" placeholder="Sánchez">
+            </div>
+
+            <div class="field field-span">
+              <label class="label" for="email">Correo electrónico</label>
+              <input id="email" class="input" type="email" placeholder="carlos.sanchez@email.com">
+            </div>
+
+            <div class="field">
+              <label class="label" for="phone">Número de teléfono</label>
+              <input id="phone" class="input" type="tel" placeholder="+34 123 456 789">
+            </div>
+
+            <div class="field">
+              <label class="label" for="birth">Fecha de nacimiento</label>
+              <div class="input-with-icon">
+                <input id="birth" class="input" type="text" placeholder="05/20/1985">
+                <svg class="cal-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm14 8H3v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10Z" fill="#9aa3af"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="field field-span">
+              <label class="label" for="about">Sobre mí</label>
+              <textarea id="about" class="textarea" rows="3"
+                placeholder="¡Hola! Soy un apasionado de los viajes y me encanta recibir a gente de todo el mundo. Mi objetivo es que te sientas como en casa."></textarea>
+            </div>
+          </form>
+        </section>
+
+        <!-- Verificación de Identidad -->
+        <section class="card panel">
+          <h3 class="panel-title">Verificación de Identidad</h3>
+
+          <div class="upload-box">
+            <div class="dropzone" role="button" tabindex="0" aria-label="Subir documentos legales">
+              <div class="cloud">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                  <path d="M19 18H6a4 4 0 1 1 .7-7.95A5 5 0 0 1 19 8a4 4 0 0 1 0 8Z" fill="#93c5fd"/>
+                  <path d="M12 12v6m0-6-2 2m2-2 2 2" stroke="#2563eb" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="dz-title">Sube tus documentos legales</div>
+              <p class="dz-sub muted small">
+                Asegura la verificación de tu cuenta subiendo una copia de tu documento de identidad o pasaporte.
+                Aceptamos PNG, JPG y PDF.
+              </p>
+              <button class="btn btn--primary" type="button">Subir documento</button>
+            </div>
+          </div>
+
+          <div class="actions end">
+            <button type="button" class="btn btn--primary">Guardar cambios</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>

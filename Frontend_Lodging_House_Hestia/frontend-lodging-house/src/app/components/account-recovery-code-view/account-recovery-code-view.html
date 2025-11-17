@@ -1,0 +1,27 @@
+<section class="recovery-overlay">
+  <div
+    class="recovery-card"
+    role="dialog"
+    aria-labelledby="recovery-title"
+    aria-describedby="recovery-desc"
+  >
+    <!-- Icono de candado -->
+    <div class="lock-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="lock-icon">
+        <path d="M7 10V8a5 5 0 0 1 10 0v2" class="lock-arc" fill="none" stroke-width="2" stroke-linecap="round"/>
+        <rect x="5" y="10" width="14" height="10" rx="2" class="lock-body" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="15" r="1.5" class="lock-hole"/>
+      </svg>
+    </div>
+
+    <h3 id="recovery-title" class="title">
+      Hemos enviado un código de<br/>recuperación a tu correo.
+    </h3>
+    <p id="recovery-desc" class="subtitle">Revisalo para continuar.</p>
+
+    <div class="btn-row">
+      <a class="btn btn--error" routerLink="/passwordChangeViewComponent">Aceptar</a>
+    </div>
+  </div>
+</section>
+

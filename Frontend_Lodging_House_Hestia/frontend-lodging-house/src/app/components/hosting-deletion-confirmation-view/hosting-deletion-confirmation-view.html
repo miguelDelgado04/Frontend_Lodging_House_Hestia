@@ -1,0 +1,35 @@
+<section class="modal-overlay">
+  <div
+    class="modal-card"
+    role="dialog"
+    aria-labelledby="delete-title"
+    aria-describedby="delete-desc"
+  >
+    <!-- Icono de advertencia -->
+    <div class="icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24" class="warn-icon">
+        <circle cx="12" cy="12" r="10" class="ring"></circle>
+        <path
+          d="M12 7v5m0 4h.01"
+          class="exclamation"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <h3 id="delete-title" class="title">
+      ¿Seguro que deseas eliminar este alojamiento?
+    </h3>
+    <p id="delete-desc" class="subtitle">
+      Esta acción no se puede deshacer.
+    </p>
+
+    <div class="btn-row">
+      <button class="btn btn--soft" (click)="cancel()">Cancelar</button>
+      <button class="btn btn--danger" (click)="confirm()">Eliminar</button>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,179 @@
+/* ===== NAVBAR ===== */
+.topbar{position:fixed;inset:0 0 auto 0;z-index:60;background:#fbfcff;border-bottom:1px solid #e9edf3;backdrop-filter:saturate(180%) blur(6px)}
+.topbar__row{height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none}
+.brand__name{font-weight:700;color:#0f1a2b}
+.nav-center{display:flex;justify-content:center;gap:22px;list-style:none;margin:0;padding:0}
+.nav-center a{color:#667089;text-decoration:none;font-size:.95rem;padding:6px 8px;border-radius:8px}
+.nav-center a:hover,.nav-center a.router-link-active{color:#111827;font-weight:600;background:rgba(17,24,39,.05)}
+.topbar__right{display:flex;align-items:center;gap:14px}
+.icon-btn,.avatar-btn{width:34px;height:34px;display:grid;place-items:center;border:1px solid #e6e9ef;border-radius:10px;background:#fff;color:#0f1a2b;cursor:pointer}
+.icon{width:18px;height:18px}
+.avatar-fallback{font-weight:700;color:#334155}
+
+/* ===== PAGE / CARD ===== */
+.wizard-page{background:#f6f8fb;min-height:100vh;padding:calc(56px + 24px) 0 32px}
+.wizard-card{background:#fff;border:1px solid #e9edf3;border-radius:16px;box-shadow:0 10px 20px rgba(0,0,0,.05);padding:26px 28px;width:92%;max-width:1100px;margin:0 auto}
+
+/* ===== PROGRESS ===== */
+.step-head{margin-bottom:12px}
+.step-label{display:block;font-size:.9rem;color:#607289;margin:0 0 6px}
+.progress{height:8px;background:#eaf0f6;border-radius:999px;overflow:hidden}
+.progress__bar{height:100%;background:#2d73ff;border-radius:inherit}
+
+/* ===== TITLES ===== */
+.title{margin:16px 0 6px;color:#0b1426;font-weight:800;font-size:1.6rem}
+.subtitle{margin:0 0 22px;color:#6b778c;font-size:.98rem}
+
+/* ===== GRID ===== */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:10px}
+@media (max-width:960px){.form-grid{grid-template-columns:1fr}}
+
+/* ===== FIELDS ===== */
+.field{margin-bottom:18px}
+.field label{display:block;margin-bottom:8px;font-weight:600;color:#0f1a2b}
+.input-icon{display:flex;align-items:center;border:1px solid #e1e6ef;border-radius:10px;background:#fff;padding:0 10px}
+.input-icon .icon{width:18px;height:18px;color:#8b97a8}
+.input-icon input{border:none;outline:none;flex:1;padding:10px 6px;background:transparent;font-size:.95rem}
+
+/* ===== SERVICES (chips con ✓ a la derecha + fondo activo) ===== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* Contenedor del chip */
+.chip {
+  position: relative;                 /* necesario para el input absoluto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 14px;
+  border: 1.5px solid #d6dae2;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: all .2s ease;
+  font-weight: 600;
+  color: #1a1f2c;
+  user-select: none;
+}
+
+/* El checkbox ocupa todo el chip pero es invisible */
+.chip > input {
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;                         /* asegura que reciba el click */
+}
+
+/* Texto del chip */
+.chip > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                           /* espacio con el ✓ */
+  font-size: .93rem;
+  pointer-events: none;               /* evita bloquear el click del input */
+}
+
+/* Hover */
+.chip:hover {
+  border-color: #aac5ff;
+  background: #f5f8ff;
+}
+
+/* ESTADO SELECCIONADO */
+.chip > input:checked + span {
+  color: #2d73ff;
+}
+.chip > input:checked + span::after {
+  content: "✓";
+  font-weight: 700;
+  color: #2d73ff;
+  font-size: 1rem;
+}
+/* Fondo y borde cuando está activo */
+.chip > input:checked ~ span {
+  /* sólo para asegurar especificidad ante reglas antiguas */
+}
+.chip > input:checked + span {
+  background: transparent;            /* el span no ocupa todo; dejamos el fondo en el chip */
+}
+.chip > input:checked {
+  /* usa una sombra sutil en el chip contenedor vía :has si tu navegador lo soporta (opcional) */
+}
+.chip:has(> input:checked) {          /* soportado en Chrome/Edge/Firefox modernos */
+  background: #eef4ff;
+  border-color: #b9cdfd;
+}
+
+/* Feedback táctil */
+.chip:active { transform: scale(.98); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .service-grid { grid-template-columns: 1fr; }
+  .chip { height: 44px; font-size: .9rem; }
+}
+
+/* ===== UPLOAD ===== */
+.upload-box{border:2px dashed #cfd6e0;border-radius:14px;padding:24px 16px;text-align:center;background:#fafbfc;transition:all .2s}
+.upload-box:hover{border-color:#2d73ff;background:#f5f8ff}
+.upload-icon{width:36px;height:36px;color:#2d73ff;margin-bottom:10px}
+.upload-text{color:#475569;font-size:.9rem;margin:0 0 12px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.thumb{height:70px;border-radius:10px;border:1px dashed #d9e0ea;background:#eef2f7}
+
+/* ===== ACTIONS ===== */
+.actions{display:flex;justify-content:space-between;margin-top:26px}
+.btn{height:40px;padding:0 18px;border-radius:10px;border:1px solid transparent;font-weight:700;cursor:pointer}
+.btn--soft{background:#eef2f7;color:#243144;border-color:#e1e6ef}
+.btn--primary{background:#2d73ff;color:#fff}
+.btn--primary:hover{filter:brightness(.96)}
+
+/* Fila: dejamos 3 columnas con gap cómodo */
+.topbar__row{
+  height: 56px;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* logo | espacio flexible | nav+acciones a la derecha */
+  align-items: center;
+  column-gap: 20px;                      /* sep. entre nav y los iconos */
+}
+
+/* El menú ya no va centrado: lo empujamos al borde derecho */
+.nav-center{
+  display: flex;
+  justify-content: flex-end;  /* <— clave */
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-self: end;          /* <— asegura que se pegue a la derecha de su celda */
+}
+
+/* (Opcional) un poco de separación visual entre el nav y los iconos */
+.topbar__right{ gap: 14px; }
+
+/* Mantén tu estilo de links como ya lo tenías */
+.nav-center a{
+  color:#667089;
+  text-decoration:none;
+  font-size:.95rem;
+  padding:6px 8px;
+  border-radius:8px;
+}
+.nav-center a:hover,
+.nav-center a.is-active,
+.nav-center a.router-link-active{
+  color:#111827;
+  font-weight:600;
+  background:rgba(17,24,39,.05);
+}
+
